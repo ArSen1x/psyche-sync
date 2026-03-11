@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+
+# Build output
+dist/
+build/
+
+# Environment
+.env
+.env.local
+.env.production
+
+# Editor / OS
+.DS_Store
+.vscode/
+*.swp
+
+# Claude internal
+.claude/
+
+# Python virtual envs
+venv/
+.venv/
