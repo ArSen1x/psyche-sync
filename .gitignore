@@ -20,6 +20,11 @@ build/
 
 # Claude internal
 .claude/
+.mcp.json
+
+# Root-level package files (not part of the project)
+/package.json
+/package-lock.json
 
 # Python virtual envs
 venv/
