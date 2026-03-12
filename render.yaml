@@ -1,14 +1,13 @@
 services:
   - type: web
     name: psyche-sense-backend
-    runtime: docker
+    runtime: python
     region: oregon
     plan: free
-    dockerfilePath: backend/Dockerfile
-    ports:
-      - port: 8000
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
     healthCheckPath: /
-    healthCheckInterval: 30
     envVars:
       - key: ALLOWED_ORIGINS
         scope: run
