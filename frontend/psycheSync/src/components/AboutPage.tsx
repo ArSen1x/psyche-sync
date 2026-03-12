@@ -4,7 +4,7 @@ const features = [
   {
     icon: Zap,
     title: "Instant Translation",
-    body: "Search for a clinical term like "Depression" or "Social Anxiety" and instantly find the corresponding 2026 ICD-10-CM code.",
+    body: 'Search for a clinical term like "Depression" or "Social Anxiety" and instantly find the corresponding 2026 ICD-10-CM code.',
   },
   {
     icon: ShieldCheck,

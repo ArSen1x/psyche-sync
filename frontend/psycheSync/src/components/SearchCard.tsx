@@ -10,7 +10,7 @@ interface Props {
 
 export default function SearchCard({ code, description, isFavorited, onToggleFavorite, onSelect }: Props) {
   return (
-    <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm flex items-start transition-all hover:border-sage-200 dark:hover:border-sage-700 hover:shadow-md active:scale-[0.99]">
+    <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm flex items-start transition-all hover:border-sage-200 dark:hover:border-sage-700 hover:shadow-lg hover:-translate-y-1 hover:ring-2 hover:ring-sage-200/60 dark:hover:ring-sage-700/60 active:scale-[0.99] active:translate-y-0">
       {/* Clickable content area */}
       <button
         onClick={() => onSelect(code)}
