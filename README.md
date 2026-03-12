@@ -2,8 +2,6 @@
 
 PsycheSync bridges the gap between DSM-5-TR clinical diagnoses and ICD-10-CM billing codes. Search the full 2026 code dataset by term or code, drill into sub-diagnoses and Excludes notes, and save frequently used codes to Favorites. Built with FastAPI and React — deployed on Render and Vercel.
 
-**Live:** [psyche-sync.vercel.app](https://psyche-sync.vercel.app) · **API:** [psyche-sync.onrender.com](https://psyche-sync.onrender.com)
-
 ---
 
 ## What It Does
@@ -64,13 +62,6 @@ psyche_sense/
 
 ---
 
-## API Endpoints
-
-| Method | Path | Description |
-|---|---|---|
-| `GET` | `/` | Health check |
-| `GET` | `/search/{query}` | Search by code or description (max 100 results) |
-| `GET` | `/details/{code}` | Full details — parent, children, excludes |
 
 ---
 
