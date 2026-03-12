@@ -1,6 +1,6 @@
 # PsycheSync
 
-A fast, mobile-friendly ICD-10-CM diagnostic code reference tool built for psychology students, clinical interns, and mental health professionals.
+PsycheSync bridges the gap between DSM-5-TR clinical diagnoses and ICD-10-CM billing codes. Search the full 2026 code dataset by term or code, drill into sub-diagnoses and Excludes notes, and save frequently used codes to Favorites. Built with FastAPI and React — deployed on Render and Vercel.
 
 **Live:** [psyche-sync.vercel.app](https://psyche-sync.vercel.app) · **API:** [psyche-sync.onrender.com](https://psyche-sync.onrender.com)
 
