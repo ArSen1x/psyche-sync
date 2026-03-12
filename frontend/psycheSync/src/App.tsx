@@ -1,10 +1,11 @@
 import { useState, useCallback, useRef } from "react"
-import { Search, BookmarkCheck, X, Loader2, Sun, Moon } from "lucide-react"
+import { Search, BookmarkCheck, X, Loader2, Sun, Moon, Info } from "lucide-react"
 import { Toaster } from "sonner"
 import { useTheme } from "./components/theme-provider"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import SearchCard from "./components/SearchCard"
 import CodeDetailSheet from "./components/CodeDetailSheet"
+import AboutPage from "./components/AboutPage"
 import { API_BASE } from "./lib/constants"
 import { useFavorites } from "./hooks/useFavorites"
 import type { CodeResult } from "./types/icd"
@@ -68,12 +69,12 @@ export default function App() {
           </div>
 
           {/* shadcn Tabs trigger row */}
-          <TabsList className="w-full max-w-lg mx-auto grid grid-cols-2 bg-slate-100 dark:bg-slate-800 rounded-xl h-9 mb-3">
+          <TabsList className="w-full max-w-lg mx-auto grid grid-cols-3 bg-slate-100 dark:bg-slate-800 rounded-xl h-9 mb-3">
             <TabsTrigger value="search" className="rounded-lg text-xs font-medium text-slate-500 dark:text-slate-400 hover:!text-sage-600 dark:hover:!text-sage-400 data-[state=active]:bg-white dark:data-[state=active]:bg-slate-700 data-[state=active]:!text-sage-700 dark:data-[state=active]:!text-sage-300 data-[state=active]:shadow-sm">
               <Search size={13} className="mr-1.5" />
               Search
             </TabsTrigger>
-            <TabsTrigger value="favorites" className="rounded-lg text-xs font-medium text-slate-500 dark:text-slate-400 hover:!text-sage-600 dark:hover:!text-sage-400 data-[state=active]:bg-white dark:data-[state=active]:bg-slate-700 data-[state=active]:!text-sage-700 dark:data-[state=active]:!text-sage-300 data-[state=active]:shadow-sm relative">
+            <TabsTrigger value="favorites" className="rounded-lg text-xs font-medium text-slate-500 dark:text-slate-400 hover:!text-sage-600 dark:hover:!text-sage-400 data-[state=active]:bg-white dark:data-[state=active]:bg-slate-700 data-[state=active]:!text-sage-700 dark:data-[state=active]:!text-sage-300 data-[state=active]:shadow-sm relative" >
               <BookmarkCheck size={13} className="mr-1.5" />
               Favorites
               {favorites.length > 0 && (
@@ -81,6 +82,10 @@ export default function App() {
                   {favorites.length > 99 ? "99+" : favorites.length}
                 </span>
               )}
+            </TabsTrigger>
+            <TabsTrigger value="about" className="rounded-lg text-xs font-medium text-slate-500 dark:text-slate-400 hover:!text-sage-600 dark:hover:!text-sage-400 data-[state=active]:bg-white dark:data-[state=active]:bg-slate-700 data-[state=active]:!text-sage-700 dark:data-[state=active]:!text-sage-300 data-[state=active]:shadow-sm">
+              <Info size={13} className="mr-1.5" />
+              About
             </TabsTrigger>
           </TabsList>
 
@@ -106,6 +111,10 @@ export default function App() {
 
           <TabsContent value="favorites" className="mt-0">
             <p className="text-center text-slate-500 dark:text-slate-400 text-xs">Your saved diagnostic codes</p>
+          </TabsContent>
+
+          <TabsContent value="about" className="mt-0">
+            <p className="text-center text-slate-500 dark:text-slate-400 text-xs">About PsycheSync</p>
           </TabsContent>
         </header>
 
@@ -146,6 +155,11 @@ export default function App() {
                 ))}
               </ul>
             )}
+          </TabsContent>
+
+          {/* About tab content */}
+          <TabsContent value="about">
+            <AboutPage />
           </TabsContent>
 
           {/* Favorites tab content */}
