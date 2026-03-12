@@ -57,9 +57,7 @@ export default function App() {
         {/* ── Sticky Header ── */}
         <header className="sticky top-0 z-20 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-100 dark:border-slate-800 px-4 pt-10 pb-3">
           <div className="relative flex items-center justify-center mb-3">
-            <p className="text-xs font-semibold tracking-widest text-sage-500 uppercase">
-              PsycheSync
-            </p>
+            <img src="/ps-oneliner.svg" alt="PsycheSync" className="h-5" />
             <button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               className="absolute right-0 p-1.5 rounded-lg text-slate-400 hover:text-sage-600 dark:text-slate-500 dark:hover:text-sage-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors [-webkit-tap-highlight-color:transparent]"
